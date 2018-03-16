@@ -1,0 +1,32 @@
+<!--index.wxml-->
+<view class="container">
+  <view class='swiper-container'>
+    <swiper class='swiper_box' autoplay='true' interval='3000'>
+        <block wx:for="{{banners}}" wx:for-item="imageURL" wx:key="id">
+                <swiper-item>
+                    <image bindtap="tapBanner" data-id="id" src="{{imageURL}}" class="slide-image" width="750rpx" height="562.5rpx"/>
+                </swiper-item>
+            </block>
+    </swiper>
+      <view class="dots">  
+            <block wx:for="{{banners}}" wx:key="unique">  
+                <view class="dot"></view>  
+            </block>  
+        </view>   
+  </view>
+  <view class='list-container' wx:for="{{categories}}" wx:key="unique" for-item="item">
+    <view class='nav-container'>
+    <text class='title-label' >{{item.category_text}}</text>    
+    </view>
+
+    <view class='card-container'>
+      <view class='card'>
+      <image class='image' mode='aspectFill' src='http://img5.imgtn.bdimg.com/it/u=4054007864,2464688467&fm=27&gp=0.jpg'> </image>
+        <view class='title-container'>
+        <text class='text'>英语麦克风</text>
+        </view>
+      </view>
+     </view>
+  </view>
+  <view wx></view>
+</view>
