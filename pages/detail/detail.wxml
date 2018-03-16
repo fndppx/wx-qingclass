@@ -1,0 +1,18 @@
+<!--pages/detail/detail.wxml-->
+<view class='container'>
+<view class='top-container'>
+<image class='image' mode="widthFix"  src= "{{categories['courses'][0]['course_images'][0]['url']}}"></image>
+</view>
+<view class='title-container'>
+<text class='title'>{{categories['courses'][0]['course_title']}}</text>
+
+</view>
+
+<view class='list-container'>
+<view view wx:for="{{categories['courses'][0]['course_images']}}" wx:for-index="idx" wx:for-item="itemName">
+<image class='image' mode='widthFix' data-id="id" src="{{itemName.url}}" ></image>
+</view>
+
+</view>
+
+</view>

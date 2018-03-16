@@ -1,12 +1,44 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/study/study",
+    "pages/mine/mine",   
+    "pages/room/room",
+    "pages/logs/logs",
+    "pages/detail/detail"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
-  }
+    "navigationBarTextStyle":"black",
+    "enablePullDownRefresh":false
+  },
+
+  "tabBar": {
+    "color": "#6e6d6b",
+    "selectedColor": "rgb(0,118,255)",
+    "borderStyle": "white",
+    "backgroundColor": "#fff",
+    "box-shadow": "0 0 6px 0",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "热点"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "全部"
+      },
+      {
+        "pagePath": "pages/study/study",
+        "text": "学习"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的"
+      }
+    ]
+  
+}
 }

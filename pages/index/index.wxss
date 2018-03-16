@@ -1,12 +1,12 @@
 /**index.wxss**/
 .swiper-container {
-   width: 750rpx;
+   width: 100%;
   position: relative;  
-  background: red;
-  margin-top: -100px;
+  background: white;
+  margin-top: 0px;
 }
 .swiper-container .dots{  
-  position: absolute;  
+  position: relative;  
   left: 0;  
   right: 0;  
   bottom: 20rpx;  
@@ -14,30 +14,43 @@
   justify-content: center;  
   background: red;
 }  
-.swiper-container .dots.dot{  
+.swiper-container .dots .dot{  
   margin: 0 8rpx;  
   width: 14rpx;  
   height: 14rpx;  
-  background: #fff;  
+  background: red;  
   border-radius: 50%;  
-  transition: all .6s;  
-  opacity: .5;
+  /* transition: all .6s;   */
+  /* opacity: .5; */
 }  
+.swiper-container .dots .dot.active{  
+  width: 14rpx;  
+  /* opacity: 1; */
+}
+
 .swiper_box {
   width: 100%;
+  height:562.5rpx;
+}
+
+/*swiper-item image*/
+.slide-image {
+  width: 100%;
+  display: inline-block;
+  overflow: hidden;
   height:562.5rpx;
 }
 .list-container{
   width: 100%;
   margin-bottom: 0px;
-  background: red;
+  background: white;
   flex-direction: column;
   /* height: 1000px;  */
 }
 .nav-container{
   margin-top: 0px;
   width: 100%;
-  background: red;
+  background: white;
   height: 60px;
   display: flex;
   align-items:center;
@@ -46,32 +59,38 @@
   align-items: center;
   font-size: 20px;
   margin-left: 20px;
-  background: green;
+  background: white;
 }
 
 .card-container{
   width: 100%;
   height: 300px;
-  background: gray;
+  background: white;
   margin-top: 0px;
+  margin-bottom: 24px;
    /* position:relative; */
 }
 .card-container .card{
+ overflow: hidden;
  margin-top: 0px;
  margin-left: auto;
  margin-right: auto;
  border-radius:6px;
  width: 90%;
  height: 98%;
- background: green;
- position:relative;  
+ background: white;
+ position:relative; 
+ box-shadow:0px 3px 3px 3px #888888;
+
+ 
 }
 .card-container .card .image{
   height: 100%;
   width: 100%;
-  background: green;
+  background: white;
   position:absolute; 
   margin-top:0px;
+  margin-bottom: 0px;
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
 }
@@ -79,7 +98,7 @@
 .card-container .card .title-container{
   height: 60px;
   width: 100%;
-  background: red;
+  background: white;
   position:absolute;
   bottom:0px;
   border-bottom-left-radius: 6px;
@@ -92,5 +111,5 @@
   align-items: center;
   font-size: 20px;
   margin-left: 20px;
-  background: green;
+  background: white;
 }

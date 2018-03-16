@@ -2,28 +2,28 @@
 <view class="container">
   <view class='swiper-container'>
     <swiper class='swiper_box' autoplay='true' interval='3000'>
-        <block wx:for="{{banners}}" wx:for-item="imageURL" wx:key="id">
+        <block wx:for="{{headboardList}}" wx:for-item="headboardItem" wx:key="id">
                 <swiper-item>
-                    <image bindtap="tapBanner" data-id="id" src="{{imageURL}}" class="slide-image" width="750rpx" height="562.5rpx"/>
+                    <image bindtap="tapBanner" mode='aspectFill' data-id="id" src="{{headboardItem['course_images'][0].url}}" class="slide-image"/>
                 </swiper-item>
             </block>
     </swiper>
-      <view class="dots">  
+     <view class="dots">  
             <block wx:for="{{banners}}" wx:key="unique">  
-                <view class="dot"></view>  
+                <view class="dot{{index == swiperCurrent ? ' active' : 'active'}}"></view>  
             </block>  
-        </view>   
+        </view>  
   </view>
-  <view class='list-container' wx:for="{{categories}}" wx:key="unique" for-item="item">
-    <view class='nav-container'>
+  <view  class='list-container' wx:for="{{categories}}" wx:key="unique" wx: for-item="item">
+    <view hidden="{{item.courses==0 ? true : false}}" class='nav-container'>
     <text class='title-label' >{{item.category_text}}</text>    
     </view>
 
-    <view class='card-container'>
+    <view class='card-container' wx:for="{{item.courses}}" wx:key="unique" wx:for-index="idx"  wx:for-item="itemName">
       <view class='card'>
-      <image class='image' mode='aspectFill' src='http://img5.imgtn.bdimg.com/it/u=4054007864,2464688467&fm=27&gp=0.jpg'> </image>
+        <image class='image' mode='aspectFill' src="{{itemName.course_images[0].url}}"> </image>
         <view class='title-container'>
-        <text class='text'>英语麦克风</text>
+        <text class='text'>{{itemName.course_title}}</text>
         </view>
       </view>
      </view>
